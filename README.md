@@ -1,5 +1,8 @@
 # Cgroup Stats CLI Tool
-This repository contains a command line tool written in Go that uses the containerd/cgroups library to print out cgroup (control group) statistics for a given cgroup. This package currently only supports cgroupsV1. You can specify the type of stats to print out using command line flags.
+This is a tool written in Go that uses the containerd/cgroups library to print out cgroup (control group) statistics for a given cgroup. This package currently only supports cgroupsV1. You can specify the type of stats to print out using command line flags.
+
+### Why not just use systemd_cgtop?
+This tool provides more granular and exact information about the stats it returns as compared to systemd_cgtop (which reports cache memory as part of memory causing misleading information about how much active memory is being used). See: https://systemd-devel.freedesktop.narkive.com/WnOE0u0k/systemd-cgtop-memory-utilization-display-not-useful
 
 ### Dependencies
 This tool requires the containerd/cgroups Go library. You can install it using the following command:
